@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gotta Catch'em All</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.get("https://fakerapi.it/api/v1/images?_quantity=100&_type=kittens&_height=300/", function(res) {  // #1 Get response data from url
+                    var html_str = "<h4>Kittens</h4><ul>";      // #2. Execute codes inside function                        
+                    for(var i = 0; i < res.data.length; i++) {
+                        html_str += "<img src=" + res.data[i].url +" style = 'width:500px;height:350px'>";
+                    }
+                    html_str += "</ul>";
+                    $("#pokemon").html(html_str);
+                }, "json");  // #3. Format the final response in JSON
+            });
+            
+        </script>
+    </head>
+    <body>
+        <div id="pokemon">
+        </div>
+    </body>
+</html>

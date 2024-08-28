@@ -1,0 +1,3 @@
+1. Authentication - for a user that is not authenticated as a Database user, access will be denied. To correct user name, verify the username in you MySQL's local server. In my case using MAMP, it can be located at the servers WebStart Page.
+2. Authorization - similarly for the database password. It can be verified in your local servers environment (WebStart page under MySQL).
+3. Network - accessing undefined database name, will result in an error. Verify you database name in you local server MySQL administrator. In my case phpMyAdmin.
